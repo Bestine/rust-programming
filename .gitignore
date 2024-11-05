@@ -1,0 +1,5 @@
+# Environment files 
+doctor_scraper_env/
+
+# Docker apps
+containerized-app/

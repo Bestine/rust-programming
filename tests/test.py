@@ -40,6 +40,7 @@
 
 # Using Firefox
 from playwright.sync_api import sync_playwright
+import time
 
 def access_homepage():
     with sync_playwright() as p:
@@ -72,6 +73,7 @@ def access_homepage():
             print(f"Link: {link_text} - URL: {link_url}")
 
         # Close the browser
+        time.sleep(360000)
         browser.close()
 
 # Run the function to test accessing the homepage
