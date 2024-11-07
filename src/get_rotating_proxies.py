@@ -31,7 +31,8 @@ print(get_free_proxies())
 all_us_proxies = [] # contains all the proxies from United States 
 
 def get_working_proxies():
-    working_proxies = []
+    # working_proxies = []
+
     for proxy in all_us_proxies:
         print(f"Using proxy: {proxy}")
         try:
