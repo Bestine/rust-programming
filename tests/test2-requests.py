@@ -1,10 +1,10 @@
-from requests_html import AsyncHTMLSession, HTMLSession
+# from requests_html import AsyncHTMLSession, HTMLSession
 
-session = HTMLSession()
-asession = AsyncHTMLSession()
+# session = HTMLSession()
+# asession = AsyncHTMLSession()
 
-async def get_homepage():
-    r = await asession.get("https://docinfo.org/")
-    return r.text
+# async def get_homepage():
+#     r = await asession.get("https://docinfo.org/")
+#     return r.text
 
-print(asession.run(get_homepage))
+# print(asession.run(get_homepage))
