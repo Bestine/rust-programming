@@ -18,6 +18,14 @@ verified_proxies_US = GatherProxies()
 
 print(f"\n...GATHERING PROXIES COMPLETE! - {len(verified_proxies_US)} proxies verified!!!")
 
+# Create a list of user agents 
+available_headers = [
+    "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0",
+    "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36", 
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36", 
+    "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/26.0 Chrome/122.0.0.0 Mobile/Safari/537.36"
+]
+
 # session = HTMLSession()
 
 # for proxy in verified_proxies_US:
@@ -48,13 +56,13 @@ def scrape_with_playwright(current_proxy):
 def scrape_with_js(current_proxy): # Ensure the proxy is `http`` not `server`
     # Start an HTML session
     session = HTMLSession()
+    selected_browser = available_headers[random.randint(0, 3)]
+
+    print(selected_browser)
 
     # Use rotating headers
     headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive"
+    "User-Agent": selected_browser
     }
     response = session.get("https://docinfo.org", proxies=current_proxy, headers=headers)
 
