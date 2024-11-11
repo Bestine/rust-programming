@@ -64,7 +64,9 @@ def scrape_with_js(current_proxy): # Ensure the proxy is `http`` not `server`
     headers = {
     "User-Agent": selected_browser
     }
-    response = session.get("https://docinfo.org", proxies=current_proxy, headers=headers)
+    response = session.get("https://www.docinfo.org/", 
+                           proxies=current_proxy, 
+                           headers=headers)
 
     
     # # Fetch the page with proxy
@@ -81,9 +83,26 @@ def scrape_with_js(current_proxy): # Ensure the proxy is `http`` not `server`
         
 
 for current_proxy in verified_proxies_US:
-    print("Checking on site....")
+    print("\n Checking on site....")
     time.sleep(random.randint(3, 9))
-    scrape_with_js(current_proxy)
+    # scrape_with_js(current_proxy)
 
-    print("!!!CHECKING DONE!")
+    selected_browser = available_headers[random.randint(0, 3)]
+
+    print("User Agent: ", selected_browser)
+
+    # Use rotating headers
+    headers = {
+    "User-Agent": selected_browser
+    }
+
+    response = requests.get(
+        url="https://www.docinfo.org/",
+        headers=headers,
+        proxies=current_proxy
+        )
+
+    print(response.status_code)
+
+    print("...CHECKING DONE!")
     
