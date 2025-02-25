@@ -3,3 +3,6 @@ doctor_scraper_env/
 
 # Docker apps
 containerized-app/
+
+# Security files 
+classified/
