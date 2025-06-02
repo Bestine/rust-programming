@@ -1,6 +1,3 @@
-# Doctors Scraper
+# Rust Pprogramming
 
-Run the code below to get started
-```bash
-pip install -r requirements.txt
-```
+This is a course that will cover the fundamentals of Rust programming
