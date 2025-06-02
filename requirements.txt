@@ -1,6 +1,0 @@
-requests
-requests-html
-beautifulsoup4
-pandas
-fake_useragent
-playwright
