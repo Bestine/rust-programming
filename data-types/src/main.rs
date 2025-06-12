@@ -58,4 +58,14 @@ fn main() {
 
     // Arrays
     let _a = [1, 2, 3, 4, 5];
+
+    let _a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    let a = [3; 5]; // array with the same values 
+    
+    // Accessing array elements 
+    let _first = a[0];
+    let second = _a[1];
+
+    println!("Second; {second}")
 }
