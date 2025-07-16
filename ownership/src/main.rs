@@ -1,9 +1,20 @@
 fn main() {
-    let reference_to_nothing = no_dangle();
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s);
+
+    s.clear();
+
 }
 
-fn no_dangle() -> String{
-    let s = String::from("hello");
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes(); //Convert the string to an array of bytes
 
-    s
+    // iterate through an array of bytes
+    for (i, &item) in bytes.iter().enumerate(){
+        if item == b' ' {
+            return i;
+        }
+    }
+    s.len()
 }
