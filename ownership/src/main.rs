@@ -1,20 +1,20 @@
 fn main() {
-    let mut s = String::from("hello world");
-
+    let s = String::from("hello mustafa");
+    
     let word = first_word(&s);
 
-    s.clear();
+    println!("First word: {word}");
 
 }
 
-fn first_word(s: &String) -> usize {
+fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes(); //Convert the string to an array of bytes
 
     // iterate through an array of bytes
     for (i, &item) in bytes.iter().enumerate(){
         if item == b' ' {
-            return i;
+            return &s[0..i];
         }
     }
-    s.len()
+    &s[..]
 }
