@@ -24,3 +24,4 @@ struct Rectangle {
 fn area(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
 }
+//next on method syntax 
