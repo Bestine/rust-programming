@@ -7,6 +7,12 @@ fn main() {
 
     let m = Message::Write(String::from("Hello"));
     m.call();
+
+    // Use the option enum
+    let some_number = Some(5);
+    let some_char = Some('e');
+
+    let absent_number: Option<i32> = None;
 }
 
 enum IpAddr {
@@ -32,3 +38,8 @@ impl Message{
         // define method body here
     }
 }
+
+// enum Option<T> {
+//     None, 
+//     Some(T),
+// }
