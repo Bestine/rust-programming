@@ -2,6 +2,10 @@ fn main() {
     value_in_cents(Coin::Quarter(UsState::Alaska));
 
     println!("Coin Value: {}", value_in_cents(Coin::Dime));
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
 }
 
 #[derive(Debug)] // so we can inspect the state in a minute 
@@ -27,5 +31,12 @@ fn value_in_cents(coin: Coin) -> u8 {
             println!("State quarter from {state:?}!");
             25
         }
+    }
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1), 
     }
 }
